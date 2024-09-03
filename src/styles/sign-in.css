@@ -1,0 +1,61 @@
+#log-in-form {
+  margin: auto;
+  margin-top: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  border: 1px #d2d2d2 solid;
+  padding: 40px;
+}
+
+#new-account {
+  margin: auto;
+  margin-top: 10px;
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border: 1px #d2d2d2 solid;
+  padding: 20px 40px;
+}
+
+#log-in-name {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Pacifico", cursive;
+  font-size: 54px;
+  font-weight: bold;
+  color: #000; /* Adjust color as needed */
+}
+
+#log-in-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#log-in-form form input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: #dedede solid 1px;
+  background-color: #efefef;
+  border-radius: 3px;
+}
+
+#log-in-form form button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #0095f6;
+  padding: 10px;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  border: none;
+}
+
+#log-in-form span {
+  text-align: center;
+}

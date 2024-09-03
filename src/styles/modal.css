@@ -1,0 +1,11 @@
+#content-post {
+  border: #dedede 1px solid;
+  border-top: none;
+  padding: 10px;
+  resize: none;
+}
+
+#content-post:focus {
+  outline: none;
+  resize: none;
+}
