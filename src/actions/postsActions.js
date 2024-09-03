@@ -6,6 +6,11 @@ import {
 
 import { URL } from "../../url";
 
+export const toggleLike = (postId) => ({
+  type: "TOGGLE_LIKE",
+  payload: postId,
+});
+
 export const fetchPosts = (token) => {
   return async (dispatch) => {
     dispatch({ type: FETCH_DATA_REQUEST });

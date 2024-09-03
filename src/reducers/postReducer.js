@@ -3,6 +3,7 @@ import {
   FETCH_DATA_REQUEST,
   FETCH_DATA_SUCCESS,
   FETCH_DATA_FAILURE,
+  TOGGLE_LIKE,
 } from "../actions/actionsTypes";
 
 const initialState = {
@@ -31,6 +32,16 @@ const postReducer = (state = initialState, action) => {
         loading: false,
         posts: [],
         error: action.error,
+      };
+    case TOGGLE_LIKE:
+      return {
+        ...state,
+        posts: {
+          ...state.posts,
+          posts: state.posts.posts.map((post) =>
+            post.id === action.payload ? { ...post, liked: !post.liked } : post
+          ),
+        },
       };
     default:
       return state;

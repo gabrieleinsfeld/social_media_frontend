@@ -15,6 +15,7 @@ import { useDisclosure } from "@chakra-ui/react";
 import { faPlus, faImage } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./styles/modal.css";
+import { URL } from "../url";
 
 function CreatePostModal({ isAnyOpen }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -23,10 +24,35 @@ function CreatePostModal({ isAnyOpen }) {
   const [content, setContent] = useState("");
   const fileInputRef = useRef(null);
   const submitButton = useRef(null);
+  const token = localStorage.getItem("authToken");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submitted");
+    // Create a FormData object
+    const formData = new FormData();
+    if (image) {
+      formData.append("newFile", image);
+    }
+    formData.append("content", content);
+
+    try {
+      const response = await fetch(`${URL}/post`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("Post submitted successfully");
+      } else {
+        // Handle errors
+        console.error("Error submitting post:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+    }
   };
   const handleButtonClick = () => {
     if (fileInputRef.current) {
@@ -141,9 +167,6 @@ function CreatePostModal({ isAnyOpen }) {
                 />
               </Button>
 
-              <div>
-                <textarea style={{ display: "none" }} value={content} />
-              </div>
               <button ref={submitButton} hidden type="submit"></button>
             </form>
           </ModalFooter>

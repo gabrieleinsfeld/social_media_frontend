@@ -1,0 +1,23 @@
+#post-container {
+  max-width: 400px;
+  border-bottom: 1px #dedede solid;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+}
+
+#post-container #avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0px;
+}
+
+#post-container img {
+  border-radius: 3px;
+}
+
+#post-container #likes-container {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px;
+}
