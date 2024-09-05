@@ -45,6 +45,9 @@ function Profile() {
                   </span>
                   Following
                 </div>
+                <span style={{ fontWeight: "bolder", fontSize: "18px" }}>
+                  {user.user.completeName}
+                </span>
               </div>
             </div>
           )}

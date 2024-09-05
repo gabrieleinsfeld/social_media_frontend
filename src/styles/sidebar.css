@@ -42,3 +42,25 @@
 #more-button:hover {
   background-color: #efefef;
 }
+
+#search-bar {
+  width: 100%;
+  padding: 5px 10px;
+  background-color: #efefef;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+}
+
+#search-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  gap: 10px;
+  padding: 5px 10px;
+}
+
+#search-item:hover {
+  background-color: #dedede;
+}

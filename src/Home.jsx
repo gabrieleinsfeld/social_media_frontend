@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchPosts, toggleLike } from "./actions/postsActions";
 import { Avatar } from "@chakra-ui/react";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import "./styles/posts.css";
 import { faHeart as faHeartSolid } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartOutline } from "@fortawesome/free-regular-svg-icons";
@@ -69,10 +70,12 @@ const Home = () => {
           posts.posts.map((post, index) => {
             return (
               <div id="post-container" key={index}>
-                <div id="avatar-container">
-                  <Avatar></Avatar>
-                  {post.user.username}
-                </div>
+                <Link to={"/another-profile"} state={post.user}>
+                  <div id="avatar-container">
+                    <Avatar></Avatar>
+                    {post.user.username}
+                  </div>
+                </Link>
                 <img src={post.image} alt="image" />
                 <div id="likes-container">
                   {post.liked ? (
@@ -101,6 +104,9 @@ const Home = () => {
                     </i>
                   )}
                 </div>
+                <span>
+                  <strong>{post.likes.length}</strong> people liked
+                </span>
                 <div>{post.content}</div>
                 <div id="comments-container"></div>
               </div>

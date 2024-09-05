@@ -38,7 +38,7 @@ const LogIn = () => {
           <label htmlFor="username">
             <input
               required
-              type="email"
+              type="text"
               placeholder="Username"
               name="username"
               value={username}
@@ -66,7 +66,7 @@ const LogIn = () => {
         </form>
       </div>
       <div id="new-account">
-        Don't have an account? <Link>Sign up</Link>
+        Don't have an account? <a href="/sign-up">Sign up</a>
       </div>
     </>
   );
