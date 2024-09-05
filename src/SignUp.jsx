@@ -21,7 +21,9 @@ const SignUp = () => {
         body: JSON.stringify({ username, password, completeName, email }),
       });
       const data = await response.json();
-      console.log(data);
+      if (data.user) {
+        setSignnedIn(true);
+      }
     } catch (error) {
       console.log(error);
     }

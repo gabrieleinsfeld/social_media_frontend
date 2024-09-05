@@ -58,14 +58,7 @@ function Sidebar() {
                 )}
               </Link>
             </Button>
-
             <SidebarDrawer
-              isAnyOpen={open}
-              content="main"
-              onUpdateState={updateOpen}
-            ></SidebarDrawer>
-            <SidebarDrawer
-              content="create"
               isAnyOpen={open}
               onUpdateState={updateOpen}
             ></SidebarDrawer>
